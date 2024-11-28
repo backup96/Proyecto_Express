@@ -1,4 +1,4 @@
-const { menu, pause, leerInput} = require('./models/menu')
+const { menu, pause, leerInput} = require('./helpers/menu')
 const Tareas = require('./models/listar')
 const main = async () => {
     let opt = '';
@@ -12,8 +12,18 @@ const main = async () => {
                 tareas.crearTarea(desc);
                  break;
             case '2':
-                console.log(tareas.listadoArr);
+                await tareas.listadoArr();
                 break;
+            case '3':
+                await tareas.listadoArrCompleto();
+                break;
+            case '4':
+                await tareas.listadoArrPendiente();
+                break;
+            case '5':
+                const id = await leerInput("Ingrese el id de la tarea completada: ");
+                await tareas.completarTarea(id)
+                break; 
             default:
                 break;
         }
