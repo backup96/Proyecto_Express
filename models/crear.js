@@ -1,28 +1,19 @@
 const  { v4 : uuidv4 } = require('uuid')
 class Tarea {
   id = "";
-  Nombre = "";
-  Correo = "";
-  Tel = "";
-  Addres = "";
-  completadoEn = "";
+  desc = "";
+  completadoEn = "Pendiente";
 
-  constructor(nom, cor, tel, add, comp) {
+  constructor(desc) {
     this.id = uuidv4();
-    this.Nombre = nom;
-    this.Correo = cor;
-    this.Tel = tel;
-    this.Addres = add;
-    this.completadoEn = comp;
+    this.desc = desc;
+    this.completadoEn = "Pendiente";
   }
 
   toJSON() {
     return {
       id: this.id,
-      Nombre: this.Nombre,
-      Correo: this.Correo,
-      Tel: this.Tel,
-      Addres: this.Addres,
+      desc: this.desc,
       completadoEn: this.completadoEn,
     };
   }

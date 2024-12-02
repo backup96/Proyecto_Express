@@ -11,27 +11,27 @@ const preg = [
     choices: [
       {
         value: "1",
-        name: `${"1.".red} Crear usuario`,
+        name: `${"1.".red} Crear tarea`,
       },
       {
         value: "2",
-        name: `${"2.".red} Listar usuario`,
+        name: `${"2.".red} Listar tareas`,
       },
       {
         value: "3",
-        name: `${"3.".red} Listars usuario con datos completos`,
+        name: `${"3.".red} Listars tareas completas`,
       },
       {
         value: "4",
-        name: `${"4.".red} Listars usuario con datos incompletos`,
+        name: `${"4.".red} Listars tareas pendientes`,
       },
       {
         value: "5",
-        name: `${"5.".red} Actualizar usuario`,
+        name: `${"5.".red} Completar tarea(s)`,
       },
       {
         value: "6",
-        name: `${"6.".red} Borrar usuario`,
+        name: `${"6.".red} Borrar tarea`,
       },
       {
         value: "0",
@@ -61,7 +61,7 @@ const pause = async () => {
       message: `Presione la tecla ${"enter".green}`,
     },
   ];
-  console.log('\n')
+  console.log("\n");
   await inquirer.default.prompt(questions);
 };
 

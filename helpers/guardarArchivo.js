@@ -6,21 +6,12 @@ const guardarDB = (data, data2) => {
   const archivoCSV = "./db/data.csv";
 
   const st =
-    "---------------------------------------------------------------------------\n|                                       |                                 |\n|            Id de la persona           |              Datos              |\n|                                       |                                 |\n---------------------------------------------------------------------------\n";
+    "--------------------------------------------------------------------------------\n|                                       |                                      |\n|             Id de la tarea            |               Detalles               |\n|                                       |                                      |\n--------------------------------------------------------------------------------\n";
   const arrTarea = {
-    usuarios: [],
+    tareas: [],
   };
-  const csv = [["id", "Nombre", "Correo", "Telefono", "Direccion", "Estado"]];
-  const csvInfo = [
-    [
-      `${data2.id}`,
-      `${data2.Nombre}`,
-      `${data2.Correo}`,
-      `${data2.Tel}`,
-      `${data2.Addres}`,
-      `${data2.completadoEn}`,
-    ],
-  ];
+  const csv = [["id", "descripción", "estado"]];
+  const csvInfo = [[`${data2.id}`, `${data2.desc}`, `${data2.completadoEn}`]];
   const convertirACSV = (datos) => {
     return datos.map((fila) => fila.join(","));
   };
@@ -52,7 +43,7 @@ const guardarDB = (data, data2) => {
     // Convertir el contenido del archivo JSON en un objeto JavaScript
     const contenido = JSON.parse(data);
 
-    const rest = contenido.usuarios.push(data2.toJSON());
+    const rest = contenido.tareas.push(data2.toJSON());
 
     fs.writeFile(archivo2, JSON.stringify(contenido, null, 2), function (err) {
       if (err) throw err;
