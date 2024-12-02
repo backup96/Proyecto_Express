@@ -11,27 +11,27 @@ const preg = [
     choices: [
       {
         value: "1",
-        name: `${"1.".red} Crear tarea`,
+        name: `${"1.".red} Crear usuario`,
       },
       {
         value: "2",
-        name: `${"2.".red} Listar tareas`,
+        name: `${"2.".red} Listar usuario`,
       },
       {
         value: "3",
-        name: `${"3.".red} Listars tareas completas`,
+        name: `${"3.".red} Listars usuario con datos completos`,
       },
       {
         value: "4",
-        name: `${"4.".red} Listars tareas pendientes`,
+        name: `${"4.".red} Listars usuario con datos incompletos`,
       },
       {
         value: "5",
-        name: `${"5.".red} Completar tarea(s)`,
+        name: `${"5.".red} Actualizar usuario`,
       },
       {
         value: "6",
-        name: `${"6.".red} Borrar tarea`,
+        name: `${"6.".red} Borrar usuario`,
       },
       {
         value: "0",
